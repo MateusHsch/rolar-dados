@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Rolar Dados</title>
+</head>
+<body>
+    <header>
+        <h1>Rolar Dados</h1>
+    </header>
+    <main>
+        <div class="descricao">
+            <p>
+                Aqui você pode rolar diferentes tipos de dados usando prompts na barra abaixo. <br>
+                Alguns exemplos de rolagem que você pode fazer:
+            </p>
+        </div>
+        <div class="exemplos"></div>
+            <span>Rolar 3d10 e somar os resultados => <strong>3d10</strong></span> <br>
+            <span>Rolar 2d20 com vantagem e somar 5 => <strong>+2d20+5</strong></span> <br>
+            <span>Rolar 3d20 com desvantagem e subtrair 3 => <strong>-3d20-3</strong></span> <br>
+            <span>Estrutura => <strong>[van/des][n° dados][d][tipo dado][mod]</strong></span>
+        </div>
+        <div class="prompt">
+            <input type="text" name="prompt-in" id="prompt-in" placeholder="prompt...">
+            <button onclick="rolarDados(this.parentElement.children[0].value)">Rolar</button>
+        </div>
+        <div class="predefinidos">
+            <ul>
+                <li onclick="rolarDados('1d20')">
+                    <img src="images/d20-icon.png" alt="d20">
+                    <span>1d20</span>
+                </li>
+                <li onclick="rolarDados('1d12')">
+                    <img src="images/d12-icon.png" alt="d12">
+                    <span>1d12</span>
+                </li>
+                <li onclick="rolarDados('1d10')">
+                    <img src="images/d10-icon.png" alt="d10">
+                    <span>1d10</span>
+                </li>
+                <li onclick="rolarDados('1d8')">
+                    <img src="images/d8-icon.png" alt="d8">
+                    <span>1d8</span>
+                </li>
+                <li onclick="rolarDados('1d6')">
+                    <img src="images/d6-icon.png" alt="d6">
+                    <span>1d6</span>
+                </li>
+                <li onclick="rolarDados('1d4')">
+                    <img src="images/d4-icon.png" alt="d4">
+                    <span>1d4</span>
+                </li>
+            </ul>
+        </div>
+        <div class="resultado">
+
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
