@@ -1,4 +1,8 @@
 
+const audio = document.getElementById('rolagem-audio')
+audio.volume = 0.2
+const resultado = document.querySelector('.resultado')
+
 function rolarDados(prompt){
 
     prompt = prompt.split(/[dD]/)
@@ -50,13 +54,14 @@ function rolarDados(prompt){
 }
 
 function inserirResultado(dados, res){
+    audio.play()
+
     let saida = ''
     for (let dado of dados) {
         saida = saida + '[' + String(dado) + ']'
     }
     saida = saida + ' = ' + String(res)
 
-    resultado = document.querySelector('.resultado')
     resultado.innerHTML = ''
 
     roll_box = document.createElement('div')
